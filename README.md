@@ -1,3 +1,27 @@
+
+# Parseador de arquivos CNAB
+
+O Objetivo deste projeto é realizar o parseamento de um arquivo .txt através de um upload do arquivo através de uma interface web. 
+O aquivo parseado é armazenado em um banco de dados.
+
+
+## Funcionalidades
+
+- Upload de arquivos
+- Parseamento de .txt para postgreSQL
+
+
+
+## Stack utilizada
+
+**Back-end:** Django
+
+
+## Pré-Requisitos
+
+- Python 3.0+
+## Rodando localmente
+
 Clone o projeto
 
 ```bash
@@ -56,3 +80,4 @@ Para rodar esse projeto, você vai precisar adicionar as seguintes variáveis de
 `DB_HST`
 
 `DB_PRT`
+
