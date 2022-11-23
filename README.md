@@ -22,25 +22,25 @@ O aquivo parseado é armazenado em um banco de dados.
 - Python 3.0+
 ## Rodando localmente
 
-Clone o projeto
+#### Clone o projeto
 
 ```bash
   git clone git@github.com:devigorgarcia/teste-2-python-backend.git
 ```
 
-Entre no diretório do projeto
+#### Entre no diretório do projeto
 
 ```bash
   cd teste-2-python-backend
 ```
 
-Instale as dependências
+#### Instale as dependências
 
 ```bash
   python -m venv venv
 ```
 
-Iniciando o ambiente virtual
+#### Iniciando o ambiente virtual
 
 - Powershell
 ```bash
@@ -57,12 +57,12 @@ Iniciando o ambiente virtual
   source venv/bin/activate
 ```
 
-Instale as dependencias pip
+#### Instale as dependencias pip
 ```bash
   pip install -r requirements.txt
 ```
 
-Rodando localmente
+#### Rodando localmente
 ```bash
   python manage.py runserver
 ```
