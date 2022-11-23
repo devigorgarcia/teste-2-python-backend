@@ -1,6 +1,6 @@
 from django.core.files.storage import FileSystemStorage
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from rest_framework.views import APIView, Request, Response, status
 
 from transactions.models import Transaction
@@ -17,8 +17,9 @@ def upload(request: Request):
         transactions = transaction_list(f"upload/{uploaded_file}")
 
         for transaction in transactions:
-            content = Transaction.objects.create(**transaction)
+            Transaction.objects.create(**transaction)
 
+        return redirect("/page/transactions/")
     return render(request, "upload.html")
 
 
