@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 style="text-align: center">Transações</h1>
+    <table
+      style="
+        width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 20px;
+      "
+      cellspacing="1"
+      cellpadding="1"
+      border="1"
+    >
+      <tbody>
+        <tr>
+          <td style="text-align: center">Tipo</td>
+          <td style="text-align: center">Data</td>
+          <td style="text-align: center">Valor</td>
+          <td style="text-align: center">CPF</td>
+          <td style="text-align: center">Cart&atilde;o</td>
+          <td style="text-align: center">Hora</td>
+          <td style="text-align: center">Propriet&aacute;rio</td>
+          <td style="text-align: center">Loja</td>
+        </tr>
+        {% for t in transactions %}
+        <tr>
+          <td style="text-align: center">{{t.type}}</td>
+          <td style="text-align: center">{{t.date}}</td>
+          <td style="text-align: center">{{t.value}}</td>
+          <td style="text-align: center">{{t.cpf}}</td>
+          <td style="text-align: center">{{t.card}}</td>
+          <td style="text-align: center">{{t.hour}}</td>
+          <td style="text-align: center">{{t.shop_owner}}</td>
+          <td style="text-align: center">{{t.shop_name}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>

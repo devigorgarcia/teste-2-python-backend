@@ -18,11 +18,34 @@ def split_transactions(transaction: str):
     year = date[0:4]
     month = date[4:6]
     day = date[6:8]
+
+    # time and date treatment
     full_year = f"{year}/{month}/{day}"
     hour = time[0:2]
     minutes = time[2:4]
     seconds = time[4:6]
     full_hour = f"{hour}:{minutes}:{seconds}"
+
+    # type treatment
+    if type == "1":
+        type = "Débito"
+    elif type == "2":
+        type = "Boleto"
+    elif type == "3":
+        type = "Financiamento"
+    elif type == "4":
+        type = "Crédito"
+    elif type == "5":
+        type = "Recebimento Empréstimo"
+    elif type == "6":
+        type = "Vendas"
+    elif type == "7":
+        type = "Recebimento TED"
+    elif type == "8":
+        type = "Recebimento DOC"
+    elif type == "9":
+        type = "Aluguel"
+
     split = {
         "type": type,
         "date": full_year,
@@ -42,5 +65,5 @@ def transaction_list(path):
     for file in files:
         transaction = split_transactions(file)
         transaction_list.append(transaction)
-        
+
     return transaction_list
