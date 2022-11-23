@@ -10,7 +10,7 @@ class Transaction(models.Model):
     id = models.UUIDField(default=uuid.uuid4, primary_key=True, editable=False)
     type = models.CharField(max_length=127)
     date = models.CharField(max_length=20)
-    value = models.CharField(max_length=20)
+    value = models.IntegerField()
     cpf = models.CharField(max_length=20)
     card = models.CharField(max_length=20)
     hour = models.CharField(max_length=20)

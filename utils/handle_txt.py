@@ -26,6 +26,9 @@ def split_transactions(transaction: str):
     seconds = time[4:6]
     full_hour = f"{hour}:{minutes}:{seconds}"
 
+    # value treatment
+    value = int(value) / 100
+
     # type treatment
     if type == "1":
         type = "Débito"
@@ -67,3 +70,30 @@ def transaction_list(path):
         transaction_list.append(transaction)
 
     return transaction_list
+
+
+def transaction_sum(transaction_list):
+    sum = 0
+
+    for transaction in transaction_list:
+
+        if transaction["type"] == "Débito":
+            sum += transaction["value"]
+        elif transaction["type"] == "Boleto":
+            sum -= transaction["value"]
+        elif transaction["type"] == "Financiamento":
+            sum -= transaction["value"]
+        elif transaction["type"] == "Crédito":
+            sum += transaction["value"]
+        elif transaction["type"] == "Recebimento Empréstimo":
+            sum += transaction["value"]
+        elif transaction["type"] == "Vendas":
+            sum += transaction["value"]
+        elif transaction["type"] == "Recebimento TED":
+            sum += transaction["value"]
+        elif transaction["type"] == "Recebimento DOC":
+            sum += transaction["value"]
+        elif transaction["type"] == "Aluguel":
+            sum -= transaction["value"]
+
+    return sum

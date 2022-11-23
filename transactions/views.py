@@ -4,7 +4,7 @@ from django.shortcuts import redirect, render
 from rest_framework.views import APIView, Request, Response, status
 
 from transactions.models import Transaction
-from utils.handle_txt import transaction_list
+from utils.handle_txt import transaction_list, transaction_sum
 
 
 # Create your views here.
@@ -35,4 +35,13 @@ def transactions_view(request):
         "shop_name",
     )
 
-    return render(request, "transactions.html", context={"transactions": transactions})
+    sum = transaction_sum(transactions)
+
+    return render(
+        request,
+        "transactions.html",
+        context={
+            "transactions": transactions,
+            "sum": sum,
+        },
+    )
